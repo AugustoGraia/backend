@@ -28,7 +28,6 @@ class AuthUserService{
         }
 
         //Gerando um token JWT e devolvendo os dados do usuário
-
         const token = sign(
             {
                 name: user.name,    //Payload
