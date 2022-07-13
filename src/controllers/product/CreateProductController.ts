@@ -12,14 +12,14 @@ class CreateProductController{
             throw new Error("Erro ao carregar a imagem")
         }else{
 
-            const { originalname, filename } = req.file;
+            const { originalname, filename: banner} = req.file;
 
 
             const produc = await createProductService.execute({
                 name,
                 price,
                 description,
-                banner: " ",
+                banner,
                 category_id
             });
             return res.json(produc)

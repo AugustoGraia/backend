@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'; //Para as resquisições
 import 'express-async-errors'; //Tratamento de erro
 import cors from 'cors';
+import path from 'path';
 
 import { router } from './routes';
 
@@ -11,6 +12,12 @@ app.use(express.json());
 app.use(cors());
 //Rotas
 app.use(router);
+//Middlewar para expor a imagem para uso no front
+app.use(
+    '/files',
+    express.static(path.resolve(__dirname, '..', 'tmp'))
+)
+
 
 //Middleware para tratar erros
 app.use((err: Error, req: Request, res:Response, next: NextFunction)=>{
