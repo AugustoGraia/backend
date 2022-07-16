@@ -12,7 +12,8 @@ import { CreateProductController } from './controllers/product/CreateProductCont
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
 
 import { CreateOrderController } from './controllers/order/CreateOrderController';
-import {  RemoveOderController } from './controllers/order/RemoveOrderController';
+import { RemoveOderController } from './controllers/order/RemoveOrderController';
+import { AddItemController } from './controllers/order/AddItemController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -33,7 +34,7 @@ router.get('/me', isAuthenticated, new DetailUserController().handle)
 // -- ROTAS CATEGORY --
 router.post('/category', isAuthenticated, new CreateCategoryController().handle)
 
-router.get('/list-category', isAuthenticated, new ListCategoryController().handle)
+router.get('/list/category', isAuthenticated, new ListCategoryController().handle)
 
 
 // --ROTAS PRODUCT --
@@ -43,7 +44,9 @@ router.get('/category/product', isAuthenticated, new ListByCategoryController().
 
 // --ROTAS ORDER --
 router.post('/order', isAuthenticated, new CreateOrderController().handle)
-router.delete('/delete-order', isAuthenticated, new RemoveOderController().handle)
+router.delete('/delete/order', isAuthenticated, new RemoveOderController().handle)
+
+router.post('/order/add', isAuthenticated, new AddItemController().handle)
 
 export { router }
 
