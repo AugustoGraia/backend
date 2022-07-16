@@ -11,8 +11,8 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateProductController } from './controllers/product/CreateProductController';
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
 
-import { CreateOrderController } from './controllers/product/CreateOrderController';
-import {  RemoveOderController } from './controllers/product/RemoveOrderController';
+import { CreateOrderController } from './controllers/order/CreateOrderController';
+import {  RemoveOderController } from './controllers/order/RemoveOrderController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
