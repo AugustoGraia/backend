@@ -12,6 +12,7 @@ import { CreateProductController } from './controllers/product/CreateProductCont
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
 
 import { CreateOrderController } from './controllers/product/CreateOrderController';
+import {  RemoveOderController } from './controllers/product/RemoveOrderController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -41,8 +42,8 @@ router.post('/product', isAuthenticated, upload.single('file'), new CreateProduc
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
 
 // --ROTAS ORDER --
-
 router.post('/order', isAuthenticated, new CreateOrderController().handle)
+router.delete('/delete-order', isAuthenticated, new RemoveOderController().handle)
 
 export { router }
 
