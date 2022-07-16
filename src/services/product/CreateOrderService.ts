@@ -15,6 +15,8 @@ class CreateOrderService {
             }
         })
 
+        return order;
+
     }
 }
 
